@@ -1,0 +1,13 @@
+<div class="search flex flex-col space-y-2">
+  <label class="text-3xl font-extralight text-primary py-2 dark:text-white"
+    >Buscar:</label
+  >
+  <hr class="border-b border-gray-800 dark:border-white" />
+  <input
+    class="text-primary text-xl px-2 py-1 border border-gray-400 rounded-md outline-cyan-700"
+    type="text"
+    placeholder="Buscar gifs..."
+    (keyup.enter)="searchGifs()"
+    #searchInput
+  />
+</div>

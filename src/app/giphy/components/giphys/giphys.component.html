@@ -1,0 +1,8 @@
+<div class="flex flex-wrap gap-5 columns-5">
+  <div *ngFor="let gif of giphys$ | async" class="text-primary dark:text-white">
+    <img [src]="gif.images.downsized_medium.url" alt="gif" />
+    <h3 class="font-semibold">{{ gif.title }}</h3>
+    <h3 class="font-semibold">{{ gif.slug }}</h3>
+    <hr />
+  </div>
+</div>

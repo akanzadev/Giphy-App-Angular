@@ -1,0 +1,12 @@
+<button
+class="absolute top-0 right-0 transform -translate-x-1/2 translate-y-1/2 text-xl px-2 py-1 bg-primary text-white outline-none shadow-sm shadow-gray-600 rounded-lg dark:shadow-gray-300 dark:bg-white dark:text-yellow-300 transition-all duration-400 ease-in-out hover:transform hover:scale-110 overflow-hidden"
+(click)="changeTheme()"
+>
+<i
+  [ngClass]="{
+    fas: true,
+    'fa-sun animate-entryleft': theme === 'dark',
+    'fa-moon animate-entryright': theme === 'light'
+  }"
+></i>
+</button>

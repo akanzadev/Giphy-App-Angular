@@ -1,9 +1,10 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
 export const environment = {
-  production: false
+  production: false,
+  API_URL: 'https://api.giphy.com/v1/gifs/search',
+  API_KEY: 'GS78zTVl7l0T78hoPPuKDMsmHOsfp7as',
 };
 
 /*
