@@ -4,9 +4,9 @@
       class="text-primary text-2xl py-3 text-center px-3 cursor-pointer hover:bg-primary hover:text-white dark:text-white dark:hover:text-primary dark:hover:bg-white"
     > -->
     <p
-      class="text-primary text-2xl py-3 text-center px-3 overflow-hidden cursor-pointer relative z-10 transition-all duration-300 ease-in-out before:content-[''] before:absolute before:top-0 before:left-0 before:w-0 before:h-full before:bg-primary before:-z-10 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full hover:text-white dark:text-white"
+      class="text-primary text-2xl text-center overflow-hidden cursor-pointer relative z-10 transition-all duration-300 ease-in-out before:content-[''] before:absolute before:top-0 before:left-0 before:w-0 before:h-full before:bg-primary before:-z-10 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full hover:text-white dark:text-white"
     >
-      <a>
+      <a class="w-full h-full block px-3 py-3" (click)="searchGiphys(searche)">
         {{ searche | slice: 0:20 | titlecase }}
         <span *ngIf="searche.length > 20">...</span></a
       >

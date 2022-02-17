@@ -1,8 +1,19 @@
-<div class="flex flex-wrap gap-5 columns-5">
-  <div *ngFor="let gif of giphys$ | async" class="text-primary dark:text-white">
+<div class="gap-5 columns-sm">
+  <div
+    *ngFor="let gif of giphys$ | async"
+    class="text-primary dark:text-white animate__animated animate__fadeIn"
+  >
+    ">
     <img [src]="gif.images.downsized_medium.url" alt="gif" />
     <h3 class="font-semibold">{{ gif.title }}</h3>
     <h3 class="font-semibold">{{ gif.slug }}</h3>
     <hr />
   </div>
 </div>
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+></div>

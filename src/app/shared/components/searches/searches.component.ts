@@ -7,12 +7,19 @@ import { GiphyService } from '../../../services/giphy.service';
   styleUrls: ['./searches.component.scss'],
 })
 export class SearchesComponent implements OnInit {
-  record: string[] = [];
-
   constructor(private giphyService: GiphyService) {}
 
-  ngOnInit(): void {
-    this.record = this.giphyService.getRecord();
+  ngOnInit(): void {}
+
+  get record() {
+    return this.giphyService.recordList;
   }
 
+  searchGiphys(searchTerm: string) {
+    this.giphyService.getGifs(searchTerm).subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+    });
+  }
 }

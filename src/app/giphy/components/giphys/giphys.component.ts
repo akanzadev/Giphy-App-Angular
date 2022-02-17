@@ -7,16 +7,13 @@ import { GiphyResponse, Giphy } from '../../../models/giphys.model';
   templateUrl: './giphys.component.html',
   styleUrls: ['./giphys.component.scss'],
 })
-export class GiphysComponent implements OnInit {
+export class GiphysComponent {
   giphys!: Giphy[];
   giphys$ = this.giphyService.searches$;
   constructor(private giphyService: GiphyService) {}
 
-  ngOnInit(): void {
-    /*   this.giphyService.searches$.subscribe({
-      next: (data) => {
-        this.giphys = data;
-      },
-    }); */
+  onScroll() {
+    const term = this.giphyService.lastSearch;
+    this.giphyService.getGifs(term);
   }
 }
