@@ -12,7 +12,6 @@ export class GiphyService {
   private API_URL = `${environment.API_URL}?api_key=${this.API_KEY}`;
   private record: string[] = [];
   private searches = new BehaviorSubject<Giphy[]>([]);
-  private last_record = '';
 
   searches$ = this.searches.asObservable();
 
@@ -21,7 +20,7 @@ export class GiphyService {
     this.getLastSearch();
   }
 
-  getGifs(searchTerm: string, offset: number = 0, limit: number = 10) {
+  getGifs(searchTerm: string, offset: number = 0, limit: number = 20) {
     let queryParams = new HttpParams();
     queryParams = queryParams.append('q', searchTerm);
     queryParams = queryParams.append('limit', limit);
@@ -33,7 +32,6 @@ export class GiphyService {
       .pipe(
         map((data) => data.data),
         tap((data) => {
-          this.last_record = searchTerm;
           this.saveSearchInRecord(searchTerm);
           this.setSearch(data);
           this.searches.next(data);
@@ -44,10 +42,6 @@ export class GiphyService {
 
   get recordList() {
     return this.record;
-  }
-
-  get lastSearch() {
-    return this.last_record;
   }
 
   getRecord() {

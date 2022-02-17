@@ -11,9 +11,4 @@ export class GiphysComponent {
   giphys!: Giphy[];
   giphys$ = this.giphyService.searches$;
   constructor(private giphyService: GiphyService) {}
-
-  onScroll() {
-    const term = this.giphyService.lastSearch;
-    this.giphyService.getGifs(term);
-  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { GiphyService } from '../../../services/giphy.service';
 
 @Component({
@@ -6,10 +6,8 @@ import { GiphyService } from '../../../services/giphy.service';
   templateUrl: './searches.component.html',
   styleUrls: ['./searches.component.scss'],
 })
-export class SearchesComponent implements OnInit {
+export class SearchesComponent {
   constructor(private giphyService: GiphyService) {}
-
-  ngOnInit(): void {}
 
   get record() {
     return this.giphyService.recordList;
